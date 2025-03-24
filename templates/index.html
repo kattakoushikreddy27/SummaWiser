@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SummaWise | AI Text Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">SummaWise</div>
+            <div class="tagline">AI-Powered Text Summarizer & QA Helper</div>
+        </header>
+
+        <div class="app-container">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Input</div>
+                    <div class="card-subtitle">Paste your text below</div>
+                </div>
+                <textarea id="input-text" placeholder="Enter or paste your text here for summarization and questions..."></textarea>
+                <div class="button-container">
+                    <button id="process-btn">Process Text</button>
+                    <button id="clear-btn" class="secondary">Clear</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Results</div>
+                    <div class="card-subtitle">Summary and Q&A based on your text</div>
+                </div>
+
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="summary">Summary</button>
+                    <button class="tab-button" data-tab="qa">Q&A</button>
+                </div>
+
+                <div id="result-container">
+                    <div class="result-tab active" id="summary-tab">
+                        <div class="output-container" id="summary-output">
+                            <p>Your summary will appear here after processing.</p>
+                        </div>
+                    </div>
+
+                    <div class="result-tab" id="qa-tab">
+                        <div class="qa-form">
+                            <input type="text" class="qa-input" id="question-input" placeholder="Ask a question about the text...">
+                            <div class="button-container">
+                                <button id="ask-btn">Ask Question</button>
+                            </div>
+                        </div>
+                        <div class="output-container" id="qa-output">
+                            <p>Ask a question about your text to get an answer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Processing your request...</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2023 SummaWise. Made by Katta Koushik Reddy. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
