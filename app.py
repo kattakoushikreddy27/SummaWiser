@@ -5,6 +5,10 @@ from collections import defaultdict
 from flask import Flask, request, jsonify, render_template, send_from_directory
 import os
 
+nltk.download('punkt')
+nltk.download('stopwords')
+
+
 # Download NLTK resources silently
 try:
     nltk.data.find('tokenizers/punkt')
